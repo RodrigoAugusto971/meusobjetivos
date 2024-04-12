@@ -57,12 +57,6 @@ body {
     display: block;
 }
 
-.bot
-
-
-
-
-
 .botao.ativo{
     background-color: var(--botao-ativo);
     border-bottom: 4px solid var(--verde);
@@ -82,8 +76,8 @@ body {
 }
 .aba-textos{
     background-color: var(--texto-fundo);
-padding: 40px;
-border-radius: 0 0 40px 40px;
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
 }
 .aba-conteudo.ativo{
     display: block;
@@ -125,7 +119,3 @@ border-radius: 0 0 40px 40px;
     font-size: 20px;
     margin: 0;
 }
-
-
-
-
