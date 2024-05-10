@@ -49,4 +49,4 @@ function comecaCronometro(){
     setInterval(AtualizaCronometro,1000);
 }
 
-comecaCronometro( )
+comecaCronometro( ) 
