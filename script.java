@@ -1,57 +1,125 @@
-const botoes = document.querySelectorAll(".botao");
-const textos = document.querySelectorAll(".aba-conteudo");
+@import url('https://fonts.googleapis.com/css2?family-Chakra+Petch:w ght@400:700&display=swap'); 
 
-for(let i=0;i <botoes.lenght;j++){
-    botoes[i].onclick = function(){
+:root {
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+    --botao-ativo: #3A375E;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
 
-        for(let j=0;j<botoes.lenght;j++){
-            botoes[j].classList.remove("ativo");
-            textos[j].classList.remove("ativo");
-        }
-        botoes[i].classList.add("ativo");
-        textos[i].classList.add("ativo");
+}
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+}
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    text-align: left;
+    width: 100%;
+    font-size: 32px;
+}
+
+.titulo-principal{
+    color: var(--verde);
+}
+
+.botao {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: var(--botao-inativo);
+    display: flex;
+    justify-self: center;
+    padding: lem;
+    font-size: 18px;
+    align-items: center;
+    width: 100%;
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-top: 2px solid var(--botao-ativo);
+    border-top: none;
+}
+
+.botao:first-child{
+    border-radius: 40px 40px 0 0;
+}
+
+.botoes {
+    display: block;
+}
+
+.botao.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
+
+@media screen and (min-width: 768px){
+    .botoes{
+        display: flex;
+    }
+
+    .botao:first-child{
+        border-radius: 40px 0 0;
+    }
+    .botao:last-child{
+        border-radius: 0 40px 0;
     }
 }
-const contadores = document.querySelectorAll(".contador");
-const tempoObjetivo1 = new Date ("2023-10-05T00:00:00");
-const tempoObjetivo2 = new Date ("2023-12-05T00:00:00");
-const tempoObjetivo3 = new Date ("2023-12-30T00:00:00");
-const tempoObjetivo4 = new Date ("2024-02-01T00:00:00");
-
-const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
-
-function calculaTempo(TempoObjetivo){
-let TempoAtual = New Date();
-let TempoFinal = tempoObjetivo - tempoAtual;
-let segundos = Math.floor(tempoFinal/1000);
-let minutos = Math.floor(segundos/60);
-let horas = Math.floor(minutos/60);
-let dias = Math.floor(horas/24);
-
-segundos %= 60;
-minutos %= 60;
-horas %= 24;
-if (tempoFinal > 0){
-    return [dias,horas,minutos,segundos];
-} else {
-    return [0,0,0,0]
+.aba-textos{
+    background-color: var(--texto-fundo);
+padding: 40px;
+border-radius: 0 0 40px 40px;
 }
+.aba-conteudo.ativo{
+    display: block;
 }
 
-function AtualizaCronometro() {
-    for (let i=0; 1<contadores.lenght;i++){
-        document.GetElementById("dias"+i).textContent = CalculaTempo (tempos[i][0]);
-         document.GetElementById("horas"+i).textContent = CalculaTempo (tempos[i][1]);
-          document.GetElementById("dias"+i).textContent = CalculaTempo (tempos[i][2]);
-           document.GetElementById("dias"+i).textContent = CalculaTempo (tempos[i][3]);
-    }
+.aba-conteudo{
+    display: none;
 }
 
-function comecaCronometro(){
-    AtualizaCronometro();
-    setInterval(AtualizaCronometro,1000);
+.aba-conteudo-titulo-principal{
+    font-size: 28px;
+    text-align: center;
+}
+.aba-conteudo-titulo-secundario{
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
 }
 
-comecaCronometro( )
+.contador{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contador-digito{
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero{
+    font-size: 80px;
+    margin: 0;
+
+}
+
+.contador-digito-texto{
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
+
+}
+
 
 
